@@ -1,0 +1,20 @@
+/*
+
+DART450
+Week 02
+Six Shooter
+
+*/
+
+body {
+	margin: 50px;
+	overflow-x: hidden; /* Allows our bullets to go off screen without creating a scrollbar */
+}
+
+.bullet {
+	position: relative; /* Relative or absolute position required for animating top and left */
+	font-family: Helvetica, sans-serif;
+	font-size: 4em;
+	font-weight: bold;
+	color: black;
+}
