@@ -7,21 +7,13 @@ class: middle
 
 # Today
 
-## Exercise 01 due tonight
-## My Boyfriend Came Back From the War & the Arty Internet
-## JavaScript & jQuery
-## Exercise 02
-## Midterm Project
-
----
-
-class: middle
-
-# My Boyfriend Came Back From the War & the Arty Internet
-
----
-
-# This that and the other thing
+- Introducing JavaScript and Libraries
+- The jQuery library
+- Setting up web project with jQuery
+- jQuery for selection and manipulation
+- jQuery events
+- More jQuery functions
+- Minimalist debugging
 
 ---
 
@@ -78,9 +70,9 @@ class: middle
   <input id="exampleInput"></input>
   <button id="exampleButton">Button</button>
 
-  <div class="exampleClass">This,</div>
+  <div class="exampleClass bold">This,</div>
   <div class="exampleClass">that,</div>
-  <div class="exampleClass">and the other thing.</div>
+  <div class="exampleClass bold">and the other thing.</div>
 </body>
 </html>
 ```
@@ -94,21 +86,24 @@ body {
   margin: 20px;
   font-family: Helvetica, sans-serif;
 }
-
 #exampleDiv {
   font-size: 3em;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
 #exampleLabel,#exampleInput,#exampleButton {
   font-size: 1.5em;
   margin-right: 1em;
   margin-bottom: 1em;
 }
-
 .exampleClass {
   text-decoration: underline;
+}
+.red {
+  color: red;
+}
+.bold {
+  font-weight: bold;
 }
 ```
 
@@ -127,19 +122,25 @@ body {
 
 ---
 
+# Now we're ready to write JavaScript!
+
+- If we knew JavaScript we could write code in `script.js`
+- Buuuut, we don't yet
+- And we specifically want to use jQuery, which is a _library_ that works with JavaScript
+- So let's get that...
+
+---
+
 # Adding jQuery to a web project
 
 - To work with jQuery specifically, we need to link to the library itself
   1. We can use a CDN (Content Delivery Network) that hosts the library file for us
   2. We can download the library file ourselves and keep it in our `js` folder
 - For this course we will go with option 1
-- At http://code.jquery.com we can get the appropriate `<script>` tag format for the latest version of jQuery:
+- At https://developers.google.com/speed/libraries/ we can get the appropriate `<script>` tag format for the latest version of jQuery:
 
 ```html
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 ```
 
 - We put this in `index.html` __above__ our own `<script>` tag so jQuery loads first
@@ -292,6 +293,45 @@ $('.exampleClass').css({
 
 ---
 
+# `addClass()`
+
+- Another way to manipulate the CSS of elements on a page is to add CSS classes to them dynamically
+- In jQuery we can use `addClass()` on a selection to specify a CSS class to apply to it
+
+```
+$('.exampleClass').addClass('red');
+```
+
+- __Note__ a weird trap: in `addClass()` you _don't_ use the period in front of the class name like you would for a selector - it's `red` not `.red`
+
+---
+
+# `removeClass()`
+
+- If you can add a class you should be able to remove a class!
+- And you can with `removeClass()`
+
+```
+$('.exampleClass').removeClass('bold');
+```
+
+---
+
+# `toggleClass()`
+
+- It might be very useful to be able to switch a class on an off on an element
+- That is, turn it on if it's off and turn it off if it's on
+- We can do that with `toggleClass()`
+
+```
+$('.exampleClass').toggleClass('bold');
+```
+
+- (This is a little harder to see right now because it all happens on page load.)
+- (We'll get to triggering these things with input soon.)
+
+---
+
 # `val()`
 
 - We can use `val()` to set the text inside an input field like this
@@ -388,6 +428,23 @@ $('.exampleClass').on('click',function () {
   - `mouseup` (happens when the mouse button goes up)
   - `dblclick` (happens when the mouse is double-clicked)
 - The power is yours!
+
+---
+
+# `val()` again
+
+- Earlier I said that `val()` can _set_ the content of an input field, but that it can also _read_ the value of an input field
+- If we just write `$('#exampleInput').val()` it will _give back_ the contents of the selected input field
+- We could _use_ that somewhere else...
+
+```
+$('#exampleButton').on('click',function() {
+  $('#exampleDiv').text($('#exampleInput').val());
+});
+```
+
+- So here we're saying "When I click the button, take the result of `$('#exampleInput').val()` and put it in the _text_ of `#exampleDiv`"
+- Mind-bending?
 
 ---
 
@@ -507,13 +564,11 @@ $('#exampleButton').on('click',function () {
 # `animate()` and color
 
 - Weirdly in the base version of jQuery you can't use `animate()` with any property based on colour!
-- You have to use another library called jQuery UI, which you can also find the appropriate `<script>` tag for at http://code.jquery.com
+- You have to use another library called jQuery UI, which you can also find the appropriate  `<link>` (for CSS) and `<script>` tags for at https://developers.google.com/speed/libraries/
 
 ```
-<script
-  src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 ```
 
 - Note that you need to add this _after_ the `<script>` tag for jQuery
@@ -522,7 +577,7 @@ $('#exampleButton').on('click',function () {
 
 # `animate()` and color
 
-- Now we can animate with colour:
+- Now we can animate with colour (well, `color` technically):
 
 ```
 $('#exampleButton').on('click',function () {

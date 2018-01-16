@@ -8,8 +8,8 @@ Description of what the script does...
 
 **********************************************/
 
-$(document).ready() {
+$(document).ready(function () {
 
   // Insert jQuery code here to run when the page is loaded
-  
-}
+
+});
