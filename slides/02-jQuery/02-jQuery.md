@@ -688,6 +688,14 @@ class: middle
 
 # Take a breath. It's okay. Are you okay?
 
+--
+
+- Want to look at some more examples?
+--
+
+- https://github.com/pippinbarr/dart450-2018/tree/master/examples/week02/
+- Or we can also try to build something (simple!) from scratch?
+
 ---
 
 # Studio and beyond!

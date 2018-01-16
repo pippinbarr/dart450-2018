@@ -1,0 +1,22 @@
+/*
+
+DART450
+Animate on keypress CSS
+
+Just some very basic styling of the input field to make it bigger
+and better
+
+*/
+
+body {
+	margin: 50px;
+}
+
+#inputfield {
+	position: relative;
+	font-family: Helvetica, sans-serif;
+	font-size: 4em;
+	width: 50%;
+	font-weight: bold;
+	color: black;
+}

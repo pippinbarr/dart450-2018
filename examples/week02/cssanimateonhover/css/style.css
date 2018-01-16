@@ -1,0 +1,29 @@
+/*
+
+DART450
+CSS Animate on hover
+
+Basic styling of text, CSS animation for making the text size larger.
+
+*/
+
+body {
+	margin: 50px;
+}
+
+#text {
+	font-family: Helvetica, sans-serif;
+	font-size: 4em;
+	font-weight: bold;
+	color: black;
+}
+
+.resize {
+	animation-name: resize;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes resize {
+	100% { font-size: 2em; }
+}

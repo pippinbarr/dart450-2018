@@ -1,7 +1,6 @@
 /*
 
 DART450
-Week 02
 Six Shooter
 
 On click, we change the text 'Bullet' to 'Bang!', make it red,
