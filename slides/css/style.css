@@ -65,3 +65,7 @@ div.remark-slide-content.title {
 .red {
   color: red;
 }
+
+img {
+    max-width: 100%;
+}
