@@ -63,6 +63,7 @@ class:middle
 __Medium specificity.__
 - Any given medium has particular ways of representing
 - Given that Lialina is working with the web here, she was __thinking explicitly about what the web (and HTML specifically) contributed to how we can convey narrative__.
+- "If something is in the net, it should speak in net.language"
 
 __Q__ What aspects of the web does Lialina use to extend, critique or alter cinematic language?
 

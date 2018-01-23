@@ -5,10 +5,6 @@ class: middle
 
 ---
 
-# Today
-
----
-
 # Hard-coded values
 
 The obvious way to put values into your code is to just type them in:
@@ -34,6 +30,7 @@ $('div').animate({
 
 # Enter the variable
 
+- A variable is like a storage box, it's like a sticky, it's like a folder, it's like a draw, it's like a... place to store information.
 - A variable is a place you can __store a value for later__. Whether it’s a number, a colour, a string of text, or whatever.
 - You __can use a variable wherever you can use a value__.
 - You can __change__ the content of a variable while your program is running, which allows for dynamic programming.
@@ -41,29 +38,41 @@ $('div').animate({
 
 ---
 
+# The three things about variables
+
+- A variable has three key aspects
+- It has a __name__ so that you know what to call it
+- It has a __value__ which is what you put in it
+- And the value has a __type__ of data
+
+---
+
 # `var meaningOfLife = 42;`
 
-- This is a standard variable declaration.
-- We are saying that the variable called meaningOfLife will contain the value 42.
+- This is a standard variable _declaration_.
+- It makes a variable come into existence in our program so we can use it later on
+- We are saying that the variable called `meaningOfLife will` contain the value `42`.
 - This is the syntax in JavaScript to declare a variable. It has five parts...
 
 ---
 
 # .codeHighlight[`var`] `meaningOfLife = 42;`
 
-- We declare variables in JavaScript using the special word var.
-- That basically means “okay, I’m going to create a place to store values now”.
-- Unlike many programming languages, JavaScript does not require you to say what type of variable you are declaring. It doesn’t care if it’s a number, a string of text, or an entire webpage of information.
-- It’s all just var. This can be a problem, because the computer can’t check whether we’re doing stupid things as easily...
+- We declare variables in JavaScript using the special word `var`.
+- That basically means "okay, I’m going to create a place to store a value now".
+- Unlike many programming languages, JavaScript does not require you to say what _type_ of variable you are declaring. It doesn’t care if it’s a number, a string of text, or an entire webpage of information...
+- It’s all just `var`. This can be a problem, because the computer can’t check whether we’re doing stupid things as easily...
+- But it's also pretty convenient, because it's one less thing to worry about
 
 ---
 
 # `var` .codeHighlight[`meaningOfLife`] `= 42;`
 
-- Variables have a variable name.
+- Variables have a _name_.
 - Otherwise we wouldn’t know what to call them when we use them later on in our code.
-- Your variable names should be meaningful. Notably, they should explain what the variable is for.
-- Also notice how variable names with multiple words are usually written with a lowercase letter first, then a capital letter for the start of each word. Do it this way unless you have a preferred standard with a good reason.
+- Your variable names should be _meaningful_. Notably, they should _explain what the variable is for_.
+- Also notice how variable names with multiple words are usually written with a lowercase letter first, then a capital letter for the start of each word.
+- Do it this way unless you have a different preferred standard with a good reason.
 
 ???
 
@@ -79,59 +88,59 @@ The rules:
 # `var meaningOfLife` .codeHighlight[`=`] `42;`
 
 - The equals sign here is the assignment operator.
-- In programming a single equals sign does not mean “equals”.
-- It means “put the value I’m going to specify into the variable I just named”. (That is, “assignment”.)
-- So in this case the assignment operator is here to put 42 into meaningOfLife.
+- In programming a single equals sign does not mean "equals".
+- It means "put the value I’m going to specify into the variable I just named". (That is called "assignment".)
+- So in this case the assignment operator is here to put `42` into `meaningOfLife`.
 
 ---
 
 # `var meaningOfLife =` .codeHighlight[`42`] `;`
 
 - Finally we have the actual value to put into our variable.
-- In this case, the Meaning of Life is defined as the integer 42.
+- In this case, `meaningOfLife` is going to hold the integer `42`.
 
 ---
 
 # `var meaningOfLife = 42`.codeHighlight[`;`]
 
-- One last thing, actually!
-- In programming we almost always end a line of code with a semicolon like this.
+- In programming we almost always end a line of code with a _semicolon_ like this.
 - It means "I’m done with this line" effectively.
-- JavaScript doesn’t actually always care if you have a semicolon at the end of a line of code.
-- But put them in anyway.
+- JavaScript technically doesn’t actually always care if you have a semicolon at the end of a line of code.
+- But put them in anyway, because the rules for when it's okay can be a little confusing, and it's better practice to have them there
 - For more on the ins and outs of semi-colons: https://www.codecademy.com/blog/78
 
 ---
 
 # `var meaningOfLife = 42;`
 
-- So, here we have a variable declaration that creates a variable called meaningOfLife and puts 42 into it for later use.
+- So, here we have a variable declaration that creates a variable (a `var`) called `meaningOfLife` and uses the assignment operator (`=`) to put `42` into it for later use.
 - Note that it’s also okay to declare a variable without a value in it to start with, like this:
 
 ```
 var meaningOfLife;
 ```
 
-- You may now know what meaningOfLife is yet, for example.
-- (If you declare a variable this way, it will still have something in it though. It will have a value called undefined in it.)
+- You may not know what `meaningOfLife` should be yet, for example.
+- (If you declare a variable this way, it will still have something in it though. It will have a value called `undefined` in it.)
 
 ---
 
 # What can go in a variable?
 
-- Although JavaScript doesn’t need us to specify what type of value we’re putting into our variable, there are a specific set of possible types of value, and we should love them all.
+- Although JavaScript doesn’t need us to specify what type of value we’re putting into our variable, there are a specific set of possible _types_ of value, and we should love them all.
+- Here is a non-exhaustive list to start with...
 
 ```
 var integerNumber = 42; 
 var floatingPointNumber = 2.222;
- var stringOfText = “This is some text”; 
+ var stringOfText = "This is some text"; 
+var stringOfText = 'This is also some text';
 var boolean = true; // or false!
 var undefinedVariable = undefined; 
-var nullVariable = null;
 ```
 
 - Note how there’s generally a special way of writing the different types.
-- A decimal point makes a floating point number, quote marks make a String...
+- A decimal point makes a floating point number, quote marks make a string...
 
 ---
 
@@ -140,14 +149,14 @@ var nullVariable = null;
 Variables can be used just as if they were the value inside them:
 
 ```
-$(div).animate({ top: “500px” },1000);
+$(div).animate({ top: "500px" },1000);
 ```
 
 with variables, becomes:
 
 ```
 var animationTime = 1000;
- var newTopLocation = “500px”; 
+ var newTopLocation = "500px"; 
 $(div).animate({ top: newTopLocation },animationTime);
 ```
 
@@ -158,22 +167,22 @@ At the very least, the animation line now becomes much more readable.
 # Using a variable
 
 ```
-$(div).animate({ top: “500px” },1000);
- $(p).animate({ top: “500px” },1000); 
-$(span).animate({ top: “500px” },1000);
+$(div).animate({ top: "500px" },1000);
+ $(p).animate({ top: "500px" },1000); 
+$(span).animate({ top: "500px" },1000);
 ```
 
 with variables, becomes:
 
 ```
 var animationTime = 1000;
- var newTopLocation = “500px”; 
+ var newTopLocation = "500px"; 
 $(div).animate({ top: newTopLocation },animationTime);
  $(p).animate({ top: newTopLocation },animationTime); 
 $(span).animate({ top: newTopLocation },animationTime);
 ```
 
-Now if you want to change the animation position and duration, it’s much easier in the variables version.
+Now if you want to _change_ the animation position and duration, it’s _much easier_ in the variables version.
 
 ---
 
@@ -191,7 +200,7 @@ var divide = 10 / 10;
 - Parentheses clarify the order of operations, just like in normal math:
 
 ```
-var withParentheses = ( 10 + 10 ) * 10;
+var withParentheses = (10 + 10) * 10;
 var withoutParentheses = 10 + 10 * 10;
 ```
 
@@ -199,41 +208,108 @@ var withoutParentheses = 10 + 10 * 10;
 
 # Arithmetic with variables
 
-- Remember, when we use variables they get treated as the value inside them, so we can do arithmetic with variables:
+- Remember, when we use variables in code they get treated as the value inside them, so we can do arithmetic with variables:
 
 ```
 var x = 10; 
 var y = 20; 
 
-var add = x + y; 
-var subtract = x - y; 
-var multiply = x * y; 
-var divide = x / y;
+var xPlusY = x + y; 
+var xMinusY = x - y; 
+var xTimesY = x * y; 
+var xDividedByY = x / y;
 ```
 
-- This starts to get powerful because you can see that you can _change variables based on other variables_
+- This starts to get powerful because you can _change variables based on other variables_
 
 ---
 
 # Pop quiz, hotshots...
 
-What’s wrong with these?
+A memory test. What’s wrong with these?
+
+`variable sum = 100;`  
+--
+
+`  var chanceOfRain = 0.1000.10;`  
+--
+
+`  var foo = 56.12;`  
+--
+
+  `var priceOfEntry == "$5";`  
+--
+
+  `var today = "Tuesday;`  
+--
+
+  `var yesterday = "Monday"  `  
+--
+
+`var *veryImportantNumber* = 12;`
+--
+
+
+As with all programming, it's really important to follow the rules and to use sensible naming and approaches to variable use.
+
+---
+
+# Minimalist debugging with `console.log()`
+
+- A quick side-note: now that we have the power of variables, it becomes important to be able to check what is _in_ them while our code is running
+- Because all too often they can end up with the wrong thing in them
+- The easy way to do this is with a function called `console.log()` which can print anything we want to the JavaScript Console
 
 ```
-variable sum = 100;
-  var chanceOfRain = 0.1000.10;
-  var foo = 56.12;
-  var priceOfEntry == “$5”;
-  var today = “Tuesday;
-  var yesterday = “Monday”  
-var *veryImportantNumber* = 12;
+console.log("Look, ma, I'm in the JavaScript console!");
 ```
+
+- If we run a program with this in it, that message will pop up in the console when the computer gets to that part of the program
+
+---
+
+# Event debugging with `console.log()`
+
+- Using `console.log()` is a great way to check if your program is even getting to places in your code you think it should be
+- I constantly write code like this for instance
+
+```
+$('.clickable').on('click',function () {
+  console.log(".clickable element was clicked!");
+});
+```
+
+- That will pop up my little message only when that element is clicked
+- If I click and I don't see it, I can tell something is going wrong
+
+---
+
+# Variable debugging with `console.log()`
+
+- Earlier we noted that variables can be used anywhere and they will be treated like their _value_
+- This is true for `console.log()` as well, so we can use it to print out the values in our variables:
+
+```
+var meaningOfLife = 42;
+console.log(meaningOfLife);
+```
+
+- Or, even better, we can create strings of text with variables in them...
+
+```
+var meaningOfLife = 42;
+console.log("The meaning of life is " + meaningOfLife);
+```
+
+That takes the string of text and then adds the _value_ of `meaningOfLife` _as text_
 
 ---
 
 # Change and time
 
-One of the more important things about variables is that they can change over time.
+- Back to variables and change...
+- Perhaps the most important thing about variables is that they can _change while our code is running_.
+- The clue is in the name
 
 ```
 var counter = 0;
@@ -245,37 +321,20 @@ var counter = 0;
 
 What would this do?
 
+--
+
+Right, the variable counter will go up by one each time we click the HTML element with a class of `.counterDiv`, and the text content of that element will be set to the value of the variable
+
 ???
 
-- So here, the variable counter will go up by one each time we click the HTML element with a class of '.counterDiv'.
 - If we had lots of divs on a page with that class this would almost start to feel like a game?
-
----
-
-# `setInterval()`
-
-- One great JavaScript function we should take a look at is `setInterval` which gives us a kind a _timer_ on our webpage that updates regularly
-
-```
-var counter = 0; 
-var updateInterval = 1000;  
-setInterval(function () {   
-  counter = counter + 1;
-  $('#counter').text(counter);
- },updateInterval);
-```
-
-- We assume we have an element on our webpage with id of `#counter`
-- So we have a `counter` variable that starts at 0
-- We have an `updateInterval` of 1000ms or 1 second
-- We use `setInterval` to call a function that adds 1 to `counter` every 1 second
 
 ---
 
 # `setTimeout()`
 
-- `setInterval()` has a sibling called `setTimeout()`
-- Instead of running _over and over again_, `setTimeout` just _waits for the time you specify_ and then runs the function one time:
+- One great JavaScript function we should take a look at is `setTimeout` which gives us a kind a _timer_ on our webpage
+- `setTimeout` just _waits for the amount of time you specify_ and then runs a function:
 
 ```
 var delay = 5000;  
@@ -286,7 +345,42 @@ setTimeout(function () { 
 
 - Here the `setTimeout` means the code will wait for 5 seconds...
 - ... and then run the function which will put 'SURPRISE!!!' into the specified element's text
-- Note that for _both_ `setInterval` and `setTimeout` the code _after_ them will run immediately, they don't _stop_ the program from running until they're triggered
+
+---
+
+# `setInterval()`
+
+- `setTimeout()` has a sibling called `setInterval()`
+- Instead of running the function _once_ after the time specified, it runs it over and over again, like clockwork
+
+```
+var counter = 0; 
+var updateInterval = 1000;  
+
+setInterval(function () {   
+  counter = counter + 1;
+  $('#counter').text(counter);
+ },updateInterval);
+```
+
+- Here the counter will go up every 1000 milliseconds, updating the text of our `#counter` elements each time.
+
+
+---
+
+# Time-travel?
+
+- Note that for _both_ `setInterval` and `setTimeout` the code _after_ them will run immediately, they don't _stop_ the program from running until they're triggered...
+
+```
+setTimeout(function () {
+  console.log("This is inside the timeout!");
+},5000);
+
+console.log("This is just in the main program!");
+```
+
+- Which message will be see first in the console?
 
 ---
 
@@ -376,12 +470,12 @@ $allDivs.on('click',function () {
 - To _save_ data to `localStorage` we use `setItem()` like this
 
 ```
-var userAge = $('#ageInput').val(); // Put the age in a variable
-localStorage.setItem('savedAge',userAge); // Save the age to the browser
+var userName = $('#nameInput').val(); // Put the name in a variable
+localStorage.setItem('savedName',userName); // Save the name to the browser
 ```
 
-- In the first line we put the value of an input field into a variable (presumably the user has typed their age in)
-- In the second line we _save_ the value of that variable (`userAge`) into the `localStorage`, also calling it `savedAge` so we can get it back later
+- In the first line we put the value of an input field into a variable (presumably the user has typed their name in)
+- In the second line we _save_ the value of that variable (`userName`) into the `localStorage`, calling it `savedName` so we can get it back later
 
 ---
 
@@ -390,18 +484,18 @@ localStorage.setItem('savedAge',userAge); // Save the age to the browser
 - To _load_ data from `localStorage` we use `getItem()` like this
 
 ```
-var savedAge = localStorage.getItem('savedAge');
-$('#ageDisplay').text(savedAge);
+var userName = localStorage.getItem('savedName');
+$('#welcomeMessage').text("Welcome back, " + userName);
 ```
 
-- In the first line we _load_ the value in `localStorage` called `savedAge` (from the previous slide) and assign it to our new variable `savedAge`
-- In the second line we _display_ the `savedAge` variable's value in an element with id `#ageDisplay`
+- In the first line we _load_ the value in `localStorage` called `savedName` (from the previous slide) and assign it to our variable `userName`
+- In the second line we _display_ the `userName` variable's value in a welcome message - the webpage knows their name!
 
 ---
 
 # That's `localStorage`!
 
-- `localStorage` is fun because it allows your webpages to have a _memory_ for specific users
+- `localStorage` is fun because it allows your webpages to have a _memory_ for specific users (or at least their computers)
 - You can ask them for information (or just _take it from them!_), save it, and then use it when they come back
 - Naturally this has undertones (overtones?) of _surveillance_?
 - Play with it!

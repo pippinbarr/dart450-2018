@@ -1,0 +1,21 @@
+/*
+
+DART 450, Winter 2018
+Name Rememberer
+Pippin Barr
+
+*/
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 2em;
+}
+
+input {
+  font-size: 1em;
+  text-align: right;
+}
+
+button {
+  font-size: 1em;
+}
