@@ -36,6 +36,7 @@ __Internet Ugly vs. The New Aesthetic__
 - Coaxed into a Snafu
 - Crappy renditions of the traditional troll face, recaptioned to capture the expression
 - “This is the clearest example of how Internet Ugly contrasts with the New Aesthetic: while the __latter explores how computers break down reality__ through pixellation and programming code, the __former shows how humans corrupt ideas through imperfect reproduction__.”
+- "In an environment where information can easily be perfectly cut and pasted, users celebrate their human inability to make the same thing twice."
 
 ---
 
@@ -72,6 +73,9 @@ __Critical satire__
 - “These aesthetic choices __effectively critique the bland, safe formulas of their subject__. They rip Sheldon and his fellow characters out of their original context and refuse to provide a sensible new one.”
 - Interesting to think about this as satire - it’s pretty relentlessly a form of satire engaged in tearing down how polished and bland media products portray reality?
 - __Does it do other things?__
+- [4Chan's Version of The big Bang theory](https://imgur.com/a/qVX7b)
+- [Custom wall papers](https://imgur.com/a/5wizH)
+- [Beautiful sunset outside my door this morning](https://www.reddit.com/r/ShittyEarthPorn/comments/spgbu/beautiful_sunset_outside_my_door_this_morning/)
 
 ---
 
@@ -84,6 +88,7 @@ __Ugliness as authentic__
 - Kind of a __continuation of the idea behind the satirisation?__
 - Taking polished media products as a starting point and __destroying them by being “realistic” in this case__
 - “Each ‘Nailed It’ image compares an intended result to an actual one (see Figure 11). ... The __more beautiful parts of the internet are thus cast as less real than the parts where people are an incompetent embarrassing mess__.”
+- "‘Nailed It’ achieves a major goal of Internet Ugly: to normalize imperfection, counteracting the effect of magazines, TV shows, and corporate websites that use technical tools to build an unattainable simulacrum of the world."
 
 ---
 

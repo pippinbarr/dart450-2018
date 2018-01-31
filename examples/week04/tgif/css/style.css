@@ -24,7 +24,7 @@ body {
 
 .tgif {
   animation-name: tgif;
-  animation-duration: 1s;
+  animation-duration: 0.4s;
   animation-iteration-count: infinite;
 }
 

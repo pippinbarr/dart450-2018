@@ -22,9 +22,9 @@ $(document).ready(function() {
 
   // We need to "hear" when the user types on their keyboard
   // so we can tell they are making an effort to see the content
-  // so we use jQuery's .keypress().
+  // so we use jQuery's 'keypress' event
   // We'll use it on 'body' so it hears all keypresses.
-  $('body').keypress(function () {
+  $('body').on('keypress',function () {
     // If the user typed a key, we reduce the opacity.
     // Note that we COULD literally set the opacity of the overlay
     // right here, but we're doing it with a variable because it's
@@ -33,7 +33,8 @@ $(document).ready(function() {
     // Could also write this as:
     // opacity -= opacityDecrease;
 
-    // Make sure opacity doesn't become a negative number
+    // Make sure opacity doesn't become a negative number by checking
+    // for it with a conditional, and then resetting it to 0 if it is
     if (opacity < 0) {
       // If opacity had become negative, set it back to 0
       opacity = 0;
@@ -70,10 +71,15 @@ $(document).ready(function() {
     // If opacity is, say 0.8, backgroundColor will be set to
     // "rgba(255,255,255,0.8)"
 
+    // Note that we COULD just set the opacity property in CSS, but I wanted
+    // to show the "string addition" version because it's often a useful way
+    // to set more complicated CSS properties, like rgba colours for example,
+    // or transforms
+
     // Finally we need to set the actual CSS property of the overlay
     // div with our new background colour...
     $('#overlay').css({
-      "background-color": backgroundColor
+      opacity: backgroundColor
     });
-  },interval);
+  },interval); // End of the setInterval, finally!
 });

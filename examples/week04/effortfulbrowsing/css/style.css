@@ -11,6 +11,7 @@ Styling the content to be nice and big
 body {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 /* Make the content big and bold */

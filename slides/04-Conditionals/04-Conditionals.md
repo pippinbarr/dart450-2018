@@ -99,7 +99,7 @@ function update() {
 - In programming we talk about things that can be `true` or `false` as _conditional expressions_ and they're often kind of like maths:
 
 `23 < 24` is `true`  
-`1 + 1 == 3` is `false`
+`1 + 1 === 3` is `false`
 
 - We use these kinds of expressions to _check what's happening_ in our code, and then react to it
 - Usually it's better if we use variables!
@@ -117,8 +117,8 @@ function update() {
 2 > 1 // Greater than
 1 <= 2 // Less than or equal to
 2 >= 1 // Greater than or equal to
-1 != 2 // Inequality
-1 == 1 // Equality
+1 !== 2 // Inequality
+1 === 1 // Equality
 ```
 
 - See? Maths. All the above are `true`
@@ -185,10 +185,11 @@ if ($(window).width() < 400) {
 }
 ```
 
-- Next we have .codeHighlight[`$(window.width() < 400`], our _condition_
+- Next we have .codeHighlight[`$(window).width() < 400`], our _condition_
 - This is _the thing we want to check_
 - We want to know if it's `true` or `false`
 - In this case we're asking "is the window's width less than 400 pixels?"
+- Note that jQuery provides `.width()` and `.height()` functions that tell us the size of elements, including the window itself!
 
 ---
 
@@ -487,7 +488,7 @@ if ($(window).width() < 300 && $(window).height() < 300) {
 ```
 
 - We can recreated the _nested `if`s_ from before using `&&` this time
-- The background will be black if the mouse is in the right half AND in the bottom half of the window
+- The background will be red if the window width is less than 300 pixels _and_ the window height is less than 300 pixels
 
 ---
 
@@ -532,7 +533,7 @@ Go Cowboys!
 
 ```
 $('#input').keypress(function (event) {
-  if (event.which == 115) {
+  if (event.which === 115) {
     var newTopOffset = $('#input').offset().top + 10;
     $('#input').offset({
       top: newTopOffset
@@ -549,7 +550,8 @@ $('#input').keypress(function (event) {
 # Random numbers
 
 - JavaScript has a function called `Math.random()` that returns a random number between `0` and `1`
-- It's great for generating random numbers in specific ranges, such as a location on the page...
+- If we put `console.log(Math.random());` in our `update` function from earlier, we can see it spits out a new random number each frame, different every time...
+- This is great for generating random numbers in specific ranges, such as a location on the page...
 
 ```
 $('div').each(function () {
@@ -609,3 +611,4 @@ $('.class').has('.childClass') // Elements with .class with a descendent with .c
 - But be aware that this is a double-edged sword... it can be very tempting to think of programming as _if this then that otherwise that but if this then that other thing unless this in which case that and then that..._
 - But in fact that quickly gets out of hand
 - Over time we learn to create _structures_ in our code that can handle wide varieties of situations with less code
+- Importantly, we need to be on the look out for _what conditions we can check_, from the date, to the temperature, to the width of the window, to the location of the mouse, to the text in an input box, and on and on and on...

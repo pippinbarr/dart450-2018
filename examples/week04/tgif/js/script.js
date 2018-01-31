@@ -51,25 +51,25 @@ $(document).ready(function() {
   // Now we use if statements to check each of the possible integers
   // that we know date.getDay() could have returned. And we set
   // todayName to be the name of the day corresponding to the integer.
-  if (today == 0) {
+  if (today === 0) {
     todayName = "Sunday";
   }
-  else if (today == 1) {
+  else if (today === 1) {
     todayName = "Monday";
   }
-  else if (today == 2) {
+  else if (today === 2) {
     todayName = "Tuesday";
   }
-  else if (today == 3) {
+  else if (today === 3) {
     todayName = "Wednesday";
   }
-  else if (today == 4) {
+  else if (today === 4) {
     todayName = "Thursday";
   }
-  else if (today == 5) {
+  else if (today === 5) {
     todayName = "Friday";
   }
-  else if (today == 6) {
+  else if (today === 6) {
     todayName = "Saturday";
   }
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
   // And if it's Friday, we should act excited by adding our special
   // friday animation to the text
-  if (todayName == "Friday") {
+  if (todayName === "Friday") {
     $('#today').addClass('tgif');
   }
 });
