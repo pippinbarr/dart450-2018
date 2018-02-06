@@ -5,6 +5,73 @@ class: middle
 
 ---
 
+# A quick comment on commenting
+
+- When we write code it can be confusing to ourself and _very_ confusing to other people
+- Part of the solution is using _good names_ for our variables (and functions)
+- Part of the solution is learning how to write more nicely structured code (with things like loops!)
+- And part of the solution is _commenting_, writing little messages in the code that _explains what it does_
+- In programming languages (and in HTML and in CSS) we use special symbols before (or around) text to indicate it's _not part of the program_ but is a _comment_
+
+---
+
+# HTML and CSS
+
+- You've probably already seen comments in HTML:
+
+```html
+<!--- This is an HTML style comment -->
+```
+
+- And in CSS
+
+```css
+/* This is a CSS style comment */
+```
+
+- When we write comments in HTML and CSS they are _ignored_ by the browser, they're just a message inside the code itself
+
+---
+
+# JavaScript comments
+
+- In JavaScript there are two flavours.
+- Single-line comments look like this
+
+```
+// This is a JavaScript single-line comment
+```
+
+- And multi-line comments look like this
+
+```
+/*
+This is a JavaScript
+multi-line
+comment
+*/
+```
+
+---
+
+# What to write?
+
+- You will have seen extensive use of both kinds of comments in all my example code, and that's a useful place to look for a model of commenting
+- The basic idea is that you should write a comment for any line or lines of code that _you find complex_ or that _someone else might find complex_
+- You comment should _explain_ the line(s) of code in plain English (or French) so that the person reading your code can more easily understand what you're doing
+- When in doubt, add a comment
+- It's also best-practice to always include a _description comment_ at the top of your files that explain what the _overall program_ does
+
+---
+
+# A quick message about commit messages
+
+- Part of the grading rubric in this course is about making sure you have _multiple commits_ in your repository for a project (this includes the midterm) and that each commit has a _descriptive message_ about what you did
+- Generally speaking your should _commit_ code whenever you add something to your project that _works_ and makes a difference to the project (e.g. changes to the CSS for better aesthetics, a new click function that makes a div move off screen, new elements in the HTML that are accessed by the JavaScript, etc.)
+- I'll be more gentle about this for the midterm, but it will be significant for the final project
+
+---
+
 class:middle
 # Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops Loops
 
@@ -23,21 +90,34 @@ class:middle
 # The grid
 
 - Let’s say we want to create a big grid of similar divs on our webpage.
+- This is the kind of thing we might want to be able to do to dynamically generate page content for example
 - One way would be to go into the HTML and type them (or cut and paste) them all in...
 - See `examples/week05/thegrid`
 --
 
-- It works, but it's kind of slow and clearly involves me doing boring work a computer should be doing...
+- It works, but it's kind of painful and clearly involves me doing boring work a computer should be doing...
 
 ---
 
 # The grid, now with jQuery!
 
 - Another way would be to dynamically create the divs in jQuery and insert them into the page...
+- jQuery has the ability to _create_ elements like this
+
+```
+var $newDiv = $('<div></div>');
+```
+
+- And the ability to _append_ them to the page like this
+
+```
+$('body').append($newDiv);
+```
+
 - See `examples/week05/thegridlooplessjquery`
 --
 
-- Impressively, this is _worse_ that just doing it in HTML! I gave up after seven!
+- Impressively, this is sort of _worse_ that just doing it in HTML! I gave up after seven!
 
 ---
 
@@ -46,7 +126,7 @@ class:middle
 - Clearly these are bad ways to add a bunch of divs to our webpage.
 - We have to write at least a line of code (HTML or JavaScript) for every div we want to add.
 - What if we wanted a thousand of the damn things?!
-- Programming is about making our lives easier (usually), so isn't there are way to just say “do this similar thing over and over”?
+- Programming is about making our lives easier (usually), so isn't there a way to just say "do this similar thing over and over”?
 - Yes. It’s called a loop.
 
 ---
@@ -60,9 +140,9 @@ while (condition) { 
 ```
 
 - This is a while loop.
-- It will execute the code inside the curly brackets over and over again while condition is true.
-- When condition becomes false, it will stop and the program will continue from there.
-- It’s a lot like an if statement that happens over and over until the condition becomes false.
+- It will execute the code inside the curly brackets over and over again while `condition` is true.
+- When `condition` becomes false, it will stop and the program will continue from there.
+- It’s a lot like an `if` statement that happens over and over until the `condition` becomes false.
 
 ---
 
@@ -74,7 +154,7 @@ while (condition) { 
 }
 ```
 
-- We start with the word `while` to identify that it's going to be a while loop
+- We start with the word `while` to identify that it's going to be a `while` loop
 
 ---
 
@@ -88,7 +168,7 @@ while (condition) { 
 
 - Then we specify the _condition_ for our loop inside _parentheses_
 - This is exactly the same kind of condition we use with an `if` statement, so it usually involves maths of some kind in the end
-- In this case the while loop is going to run over and over until this condition is `false`
+- In this case the `while` loop is going to run over and over until this condition is `false`
 - For as long as it's `true` the loop goes on, and on, and on, and on, ...
 
 ---
@@ -109,7 +189,7 @@ while (condition) { 
 
 # Back to the grid
 
-- So clearly a loop can take care of the repetitive nature of making those divs in our grid
+- So, clearly a loop can take care of the repetitive nature of making those divs in our grid
 - It'll need to look something like...
 
 ```
@@ -128,7 +208,7 @@ while (the divs aren't all added yet) {
 There are three main things you need to establish when you’re using a loop:
 
 - __Start condition__. What is the situation you start off in?  (The divs haven’t been added.)
-- __Stop condition__. What is the situation when you can stop?  (All the divs have been added.)
+- __Stop condition__. What is the situation when you should stop?  (All the divs have been added.)
 - __Action__. What should you do each time through the loop?  (Add one div to the page.)
 
 ---
@@ -140,10 +220,11 @@ There are three main things you need to establish when you’re using a loop:
 ```
 var totalDivsToAdd = 10; 
 var divsAdded = 0; 
+
 while (divsAdded < totalDivsToAdd) {   
   var $div = $('<div></div>');
   $('body').append($div);
-  currentDiv = currentDiv + 1; 
+  divsAdded = divsAdded + 1; 
 }
 ```
 
@@ -176,7 +257,7 @@ $(document).ready(function () { 
 
 ---
 
-# To infinite loop, and beyond! (There is no beyond.)
+# To infinite loop, and... beyond?
 
 - You have to be careful with loops:
 
@@ -206,11 +287,11 @@ while (true) { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is " + i); 
 }
 ```
 
-- This is a for loop that counts from 0 up to 9 and prints out each number in the form “i is 0”, “i is 1”, i is 2” and so on...
+- This is a for loop that counts from 0 up to 9 and prints out each number in the form "i is 0”, "i is 1”, i is 2” and so on...
 - Let’s look at the pieces of this...
 
 ---
@@ -219,7 +300,7 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
@@ -234,7 +315,7 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
@@ -248,7 +329,7 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
@@ -263,12 +344,12 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
 - Then we have `i < 10` (after a semicolon)
-- This is the _stopping condition_ we talked about earlier
+- This is like the _stopping condition_ we talked about earlier, except really it's the "keep going condition"
 - This uses the variable we set up inside a _conditional statement_
 - If this statement is `true` the loop runs through again
 - If this statement is `false` the loop stops
@@ -279,7 +360,7 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
@@ -294,7 +375,7 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
@@ -306,7 +387,7 @@ for (var i = 0; i < 10; i++)  { 
 
 ```
 for (var i = 0; i < 10; i++)  {   
-  console.log(“i is “,i); 
+  console.log("i is ",i); 
 }
 ```
 
@@ -333,7 +414,7 @@ for (var i = 0; i < 10; i++) {
 for (var i = 20; i > 0; i--) {
 }
 
-// Count UP from 0 to 100 in increments of 100
+// Count UP from 0 to 100 in increments of 10
 for (var i = 0; i <= 100; i+=10) {
 }
 ```
@@ -390,6 +471,23 @@ for (var i = 0; i < totalDivsToAdd; i++) {
 - Nice and tidy
 - Generally if you're just wanting to execute code some defined number of times, a `for` loop will tend to be more elegant
 - See `examples/week05/thegridforloopedjquery`
+
+---
+
+# The grid with a `for` loop using `i`
+
+```
+var totalDivsToAdd = 10; 
+
+for (var i = 0; i < totalDivsToAdd; i++) {
+  var $div = $('<div>' + (i+1) + '</div>');
+  $('body').append($div);
+}
+```
+
+- Often in a `for` loop we _use_ `i` in some capacity
+- In this simple case we can _number_ our divs from 1 to 10
+- See `examples/week05/thegridforloopedwithijquery`
 
 ---
 
@@ -481,18 +579,37 @@ myArray[5] = myArray[2] + 20;
 
 ```
 var myFloats = [1.2,2.44,3.1415,0.12,-0.9];  
-var myStrings = [“Hello”,”Ciao”,”Salut”];
+var myStrings = ["Hello”,”Ciao”,”Salut”];
   var myBooleans = [true,false,true,true,false];
 ```
 
 - We can put anything that can go into a variable into an array, in other words.
 - They’re just sets of numbered variables all kept together in one place.
+
+---
+
+# Objects in arrays!
+
 - It gets even more "data-like" if you put _objects_ in an array:
 
 ```
-var people = [{name: 'John',age: 32},{name: 'Jane',age: 26},{name: 'June',age: 88}];
+var people = [
+  {
+    name: 'John',
+    age: 32
+  },
+  {
+    name: 'Jane',
+    age: 26
+  },
+  {
+    name: 'June',
+    age: 88
+  }
+];
 ```
 
+- Notice how we can use newlines to make this array more readable in code
 - That's starting to look like a simple database!
 
 ---
@@ -524,7 +641,7 @@ for (var i = 0; i < people.length; i++) {
 ```
 
 - That is, we can create content for our webpage based on the _data_ in our array
-- If we add or remove elements, the page will change accordingly!
+- See `examples/week05/simpledatabase`
 
 ---
 
@@ -588,8 +705,7 @@ $button.on('click',function () {
 
 ---
 
-
-# `.each()`ing (This is a clever play on I Ching?)
+# The `.each()`ing
 
 - jQuery lets us loop through all elements in a specific selection to run the same code for each one
 - We could use the following to give _each_ div a random background colour...
@@ -606,3 +722,13 @@ $('div').each(function () {
   $(this).css({ backgroundColor: randomColour });
 });
 ```
+
+---
+
+# That's a lot (as per usual)
+
+The main take-aways here are:
+
+- _Commenting_ is a super important part of good programming practice. It's fine to add your comments _at the end_ so long as you actually add them!
+- _Loops_ are great for repetitive actions, so if you find yourself repeating the same (or very similar) code over and over again, you may need a loop
+- _Arrays_ store (related) values as ordered, numbered elements all together inside a single variable and can be used as a very simple kind of database

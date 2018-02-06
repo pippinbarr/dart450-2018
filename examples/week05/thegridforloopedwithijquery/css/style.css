@@ -1,0 +1,21 @@
+/*
+
+DART 450, Winter 2018
+The Grid
+Pippin Barr
+
+Styling for square divs with background colour
+
+*/
+
+body {
+  margin: 0;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  margin: 5px;
+  display: inline-block;
+}

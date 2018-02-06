@@ -1,0 +1,21 @@
+/*
+
+DART 450, Winter 2018
+Simple Database
+Pippin Barr
+
+Styling for divs with background colour
+
+*/
+
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+div {
+  width: 33%;
+  background-color: #faa;
+  padding: 5px;
+  margin: 5px;
+}

@@ -6,6 +6,30 @@ class: middle
 ---
 
 class:middle
+## By and large, game design theorists have positioned .codeHighlight[game design as the craft of satisfying players’ desires]
+
+???
+
+- Is this also true of the web? Is it about satisfying the audience? What is it about?
+- __Do we efface ourselves when we create our design work__? Are we trying to hide ourselves? Why might this be desirable? What happens if we move in the other direction and foreground ourselves?
+- __How does this relate to social media__ and the idea of projecting ourselves through those interfaces?
+
+---
+
+class:middle
+## .codeHighlight[Player narcissism] is an extreme but inevitable consequence of user-centered design practices
+
+## this current trend represents an .codeHighlight[intrinsic conservatism in the exploration of the medium and its aesthetic possibilities]
+
+???
+
+- Is this true of web design more generally? __Web user narcissism__?
+- Key to see that there’s not __necessarily anything wrong with the developed conventional stance__
+- But it is a __limitation of a much larger design space__ that we, as artist-designers, ought to explore.
+
+---
+
+class:middle
 ## abusive game design is, at its core, about .codeHighlight[spotlighting the dialogic relation between player and designer].
 
 ???
@@ -28,30 +52,6 @@ class:middle
 
 ---
 
-class:middle
-## By and large, game design theorists have positioned .codeHighlight[game design as the craft of satisfying players’ desires]
-
-???
-
-- Is this also true of the web? Is it about satisfying the audience? What is it about?
-- Do we efface ourselves when we create our design work? Are we trying to hide ourselves? Why might this be desirable? What happens if we move in the other direction and foreground ourselves?
-- How does this relate to social media and the idea of projecting ourselves through those interfaces?
-
----
-
-class:middle
-## .codeHighlight[Player narcissism] is an extreme but inevitable consequence of user-centered design practices
-
-## this current trend represents an .codeHighlight[intrinsic conservatism in the exploration of the medium and its aesthetic possibilities]
-
-???
-
-- Is this true of web design more generally? __Web user narcissism__?
-- Key to see that there’s not __necessarily anything wrong with the developed conventional stance__
-- But it is a __limitation of a much larger design space__ that we, as artist-designers, ought to explore.
-
----
-
 ## Physical Abuse: Painstation
 
 ![](images/painstation.png)
@@ -59,6 +59,7 @@ class:middle
 ???
 
 - https://www.youtube.com/watch?v=6bm7fLcj5UI&feature=youtu.be&t=653
+
 - How does this form of abuse make us feel?
 - Does this lead us into conversation with the designer?
 - I wonder whether these forms of abusive designer really exist more as a form of __conversation with design itself__ rather than a specific designer?
@@ -86,6 +87,21 @@ class:middle
 
 ---
 
+## Temporal Abuse: Desert Bus
+
+![](images/desertbus.png)
+
+???
+
+- https://youtu.be/nBr7EhL6Jpg?t=112
+
+- One thing computers are particularly distinct from humans in is their lack of perception of or concern for _time_
+- A computer can run the same code over and over until the heat death of the universe, but human experience of time is visceral and immediate
+- This contrast can be emphasised by creating scenarios that are intolerable for a human, but "reasonable" in the context of computers and computation
+- Does this suggest dialog with the designer or with the _computer_?
+
+---
+
 ## Unfair Design: Kaizo Mario
 
 ![](images/kaizomario.png)
@@ -108,11 +124,12 @@ class:middle
 ???
 
 - https://www.youtube.com/watch?v=nptXAYlRhFo
+
 - How does this kind of design make us feel? What is the abuse?
+- Feels hugely about altering our relationship to the information we need to get our "work" done (or play in this instance) - by disrupting perception, we become less effective and __perception itself becomes a matter of skill/challenge__
 - Does this seem dialogic?
 - Do we buy the idea that aesthetic abuse can lead us to a sense of dialog with the designer?
 (I’m skeptical!)
-- To me when we play with aesthetics in this way we’re leaning more toward narrative ideas that remain within the game itself? Can aesthetics (visual or otherwise) reach beyond the world/narrative they frame?
 - How could this transfer to the web?
 
 ---
@@ -124,6 +141,7 @@ class:middle
 ???
 
 - https://www.youtube.com/watch?v=zFd5DFxKfG8
+
 - What about this seems conversational/dialogic?
 - How does this form of abuse lead us to feel?
 - Is this a conversation with the designer or with one’s partner?
