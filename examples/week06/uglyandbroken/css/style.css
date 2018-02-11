@@ -1,0 +1,32 @@
+/*
+
+Ugly
+Pippin Barr
+
+*/
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+}
+
+#poem {
+  font-size: 1em;
+  padding: 2em;
+  line-height: 1.5em;
+}
+
+#title {
+  font-size: 2em;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+.line {
+
+}
+
+.image {
+  position: absolute;
+  z-index: -1;
+}

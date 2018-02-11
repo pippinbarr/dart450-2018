@@ -1,0 +1,14 @@
+/*
+
+Blast.js template
+Pippin Barr
+
+Some basic styling
+
+*/
+
+/* We have this here just to point out that EVERYTHING
+we run through .blast() ends up with this class. */
+.blast {
+  text-decoration: underline;
+}

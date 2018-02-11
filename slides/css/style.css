@@ -27,7 +27,7 @@ div.remark-slide-content.title {
   /* background-color: #ffff77; */
   /* padding: 0.25em; */
   /* text-align: center; */
-  border-bottom: solid 1px #3333aa;
+  border-bottom: solid 1px orange;
 }
 
 .remark-slide-content h2 {
@@ -59,7 +59,11 @@ div.remark-slide-content.title {
 }
 
 .codeHighlight {
-  color: blue;
+  color: orange;
+}
+
+.hi {
+  color: orange;
 }
 
 .red {
