@@ -13,12 +13,10 @@ $(document).ready(function() {
   // Most basically, we can just call .blast() on an element
   // to divide it into spans (around words in this case) each with
   // a class of 'blast'
-  $('#basicblast').blast({
-    delimiter: 'sentence'
-  });
+  $('#basicblast').blast();
 
-  // More creatively, though, we can call .blast() and then call
-  // a function on EACH of the elements created by blast (e.g. in this case
+  // More creatively, though, we can call .blast() and then listen for an event
+  // on each of the elements created by blast (e.g. in this case
   // each span around each character)
   $('#blastbycharacter').blast({
     delimiter: 'character'

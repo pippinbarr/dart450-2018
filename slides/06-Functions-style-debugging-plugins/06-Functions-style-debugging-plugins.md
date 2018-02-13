@@ -189,6 +189,77 @@ function setupPage() {
 
 ---
 
+
+
+# Functions for reuse
+
+- Along with their organisational superpowers, functions allow us to _reuse_ code we've written, rather than write it out again
+- Consider the case where we want to _also_ draw a red square whenever we press a key
+- In the old version without functions we'd need something like this...
+
+---
+
+```
+$(document).ready(function () {
+  $(document).on('click',function () {
+    var $square = $('<div></div>');
+    var x = Math.floor(Math.random() * $(window).width());
+    var y = Math.floor(Math.random() * $(window).height());
+    $square.css({
+      position: 'absolute',
+      top: y + 'px',
+      left: x + 'px',
+      width: '100px',
+      height: '100px',
+      backgroundColor: 'red'
+    });
+    $('body').append($square);
+  });
+  $(document).on('keypress',function () {
+    var $square = $('<div></div>');
+    var x = Math.floor(Math.random() * $(window).width());
+    var y = Math.floor(Math.random() * $(window).height());
+    $square.css({
+      position: 'absolute',
+      top: y + 'px',
+      left: x + 'px',
+      width: '100px',
+      height: '100px',
+      backgroundColor: 'red'
+    });
+    $('body').append($square);
+  });
+});
+```
+
+---
+
+# Using a function!
+
+```
+$(document).ready(function () {
+  $(document).on('click',addRedSquare);
+  $(document).on('keypress',addRedSquare);
+});
+
+function addRedSquare() {
+  var $square = $('<div></div>');
+  var x = Math.floor(Math.random() * $(window).width());
+  var y = Math.floor(Math.random() * $(window).height());
+  $square.css({
+    position: 'absolute',
+    top: y + 'px',
+    left: x + 'px',
+    width: '100px',
+    height: '100px',
+    backgroundColor: 'red'
+  });
+  $('body').append($square);
+}
+```
+
+---
+
 # Functions do more than this!
 
 - Functions can do more than just break our code up into named parts
@@ -290,12 +361,12 @@ $(document).ready(function () { 
 Use comments to:
 
 - __Explain what your overall script does__ in a comment at the top of the script file. (This is also true for your HTML and CSS files, which should have a comment identifying the project and what the file contributes to it.)
-- __Explain what a function does__ in a comment just before the function, including what its arguments are and what it returns if anything.
+- __Explain what a function does__ in a comment just before the function
 - __Explain what a complicated line (or lines) of code does__ in a comment just before the line or lines.
 
 ---
 
-# Naming
+# Naming functions, variables, and files
 
 ```
 function addCatImage() {   
@@ -306,6 +377,7 @@ function addCatImage() { 
     src: "images/cat.png"  
   });   
   $('#cats').append($image);
+}
 ```
 
 - It’s debatable whether you really need comments to explain this, given how clear it is from the code itself.
@@ -321,19 +393,19 @@ function lol() { 
   d.attr({     
     id: "crdr",     
     class: "zmm",     
-    src: "images/cat.png"  
+    src: "fk/blz.png"  
   });   
   $('#jkls').append(d);
 ```
 
-- This is exactly the same code and will run just as well, but is now much, much harder to understand.
+- This is exactly the same code and will run just as well (assuming you used that terrible filename), but is now much, much harder to understand.
 
 ---
 
 # All together now...
 
 ```
-function lol(){ var d = $('<img>'); d.attr({ id:"crdr", class:"zmm", src:"fk/blz.png"}); $('#jkls').append(d);
+function lol(){ var d=$('<img>'); d.attr({ id:"crdr", class:"zmm", src:"fk/blz.png"}); $('#jkls').append(d);
 ```
 
 - This is also the same code and will run just as well
@@ -351,8 +423,10 @@ class:middle
 # Bugs
 
 - A "bug" is basically any problem with your program. There are various ways these problems can arise, but there are two basic categories:
-- Sometimes you’ve written code that JavaScript doesn’t understand, so your program just won’t run at all.
-- Sometimes you’ve written code that JavaScript understands, your program runs, but it doesn’t do what you thought it would.
+
+  1. Sometimes you’ve written code that JavaScript doesn’t understand, so your program just won’t run at all.
+  2. Sometimes you’ve written code that JavaScript understands, your program runs, but it doesn’t do what you thought it would.
+
 - Both of these situations require "debugging", the set of techniques and process for fixing bugs.
 
 ---
@@ -396,7 +470,7 @@ __Uncaught SyntaxError: Unexpected Identifier : 1__
 
 # Non-existence: functions
 
-- JavaScript (and all programming languages) cares a lot about spelling and is case sensitive. If you get something even a little wrong, it will get confused.
+- JavaScript (like most programming languages) cares a lot about spelling and is case sensitive. If you get something even a little wrong, it will get confused.
 - Making some kind of typo will lead to JavaScript telling you things don't exist...
 
 ```
@@ -451,7 +525,7 @@ __Uncaught ReferenceError: smaller is not defined. : 2__
 
 # Wrong type of value in a variable
 
-- A consequence of all variables just being declard with `var` is that JavaScript never knows what type of thing you _meant_ to have in that variable.
+- A consequence of variables just being declared with `var` is that JavaScript never knows what type of thing you _meant_ to have in that variable.
 - Which means it can’t tell if you get it wrong!
 
 ```
@@ -485,7 +559,7 @@ var myThirdNumber = myNumber + mySecondNumber;
 - What is in myThirdNumber?
 --
 
-- `11` - Because if you’re doing arithmetic, JavaScript will always try to convert values to "make it work". `true` becomes `1` in this case.
+- `11` - Because JavaScript will try to convert values to "make it work". `true` becomes `1` in this case.
 
 ---
 
@@ -692,17 +766,10 @@ It's because it evaluates `myNumber = 5` as if it’s a condition, and it turns 
 - Browsers have debugging tools built into them.
 - They’re quite sophisticated and to be totally honest I only rarely use them.
 - In Chrome, if you go to the Sources tab when you’ve brought up the Developer Tools, you’ll see a whole lot of possible tools, including:
-- The ability to pause your program.
-- The ability to set “breakpoints” in the code that will automatically pause your program when it reaches that line.
-- The ability to “watch” specific expressions, like the value of a variable or some conditional statement.
 
----
-
-# Let's debug a thing?
-
-- I have a devastatingly broken project available for us to debug
-- It's in `examples/week06/uglyandbroken`
-- (As a "bonus" it includes the other uses of functions we haven't looked at in case anyone wants to play around with them)
+  * The ability to pause your program.
+  * The ability to set “breakpoints” in the code that will automatically pause your program when it reaches that line.
+  * The ability to “watch” specific expressions, like the value of a variable or some conditional statement.
 
 ---
 
@@ -749,6 +816,8 @@ becomes
 </div>
 ```
 
+which would be really boring to do manually, especially for long texts!
+
 ---
 
 # Using blast.js
@@ -758,7 +827,7 @@ becomes
   - The _documentation_ so we know how to use it
   - The _library itself_ as a `.js` file we can put in our `js/` folder
 - So for blast.js we go to the website: http://velocityjs.org/blast/
-- We see the documentation is there already, handy!
+- We see there is documentation there already, handy!
 - Then we have to get the file...
 
 ---
@@ -770,7 +839,7 @@ becomes
 - Then we click `Raw` to get the text file version of the library
 - Then we _save_ that file to our computer
 - We put the file in the `js/` folder of our project
-- And we _link_ to the library with a `<script>` tag:
+- And we _link_ to the library with a `<script>` tag in `index.html`:
 
 ```
 <script src="js/jquery.blast.min.js" content="text/javascript"></script>
@@ -785,3 +854,11 @@ becomes
 - `examples/week06/basicblasting` shows examples of the basic idea of breaking texts into characters, words, and sentences
 - `examples/week06/keyblasting` is an example of using blasting to be able to make characters on the page react to keypresses
 - `examples/week06/randomblasting` uses blasting to create a (bad) random ransom note effect
+
+---
+
+# Let's debug a thing?
+
+- I have a devastatingly broken project available for us to debug
+- It's in `examples/week06/uglyandbroken`
+- (As a "bonus" it includes the other uses of functions we haven't looked at in case anyone wants to play around with them)

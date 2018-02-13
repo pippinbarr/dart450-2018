@@ -3,13 +3,13 @@
 Ransom Blasting
 Pippin Barr
 
-Script to randomise the font for each character on a page so it looks, roughly-speaking,
-like a ransom note.
+Script to randomise the font for each word on a page so it looks,
+very roughly-speaking, like a ransom note.
 
 */
 
 // Some arrays which we'll use to randomly select CSS properties
-// for each character we're targeting.
+// for each word we're targeting.
 
 var fonts = [
   "sans-serif","courier","times","georgia","palatino","serif","comic sans ms",
@@ -28,6 +28,10 @@ var marginRights = [
   "0px", "2px", "4px", "5px", "10px", "20px"
 ];
 
+var paddings = [
+  "0px", "2px", "4px", "5px", "10px", "25px"
+];
+
 var transforms = [
   "rotateZ(0)", "rotateZ(0)", "rotateZ(0)", "rotateZ(0)", "rotateZ(0)", "rotateZ(0)", "rotateZ(-10deg)", "rotateZ(5deg)", "rotateZ(15deg)", "rotateZ(20deg)"
 ];
@@ -37,19 +41,20 @@ var backgroundColors = [
 ];
 
 var borders = [
-  "0px", "1px solid", "2px solid", "4px solid", "8px solid"
+  "1px solid", "2px solid", "4px solid", "8px solid"
 ];
+
 
 $(document).ready(function() {
 
-  // Use blast to target characters
+  // Use blast to target words
   $('#content').blast({
-    delimiter: 'character'
+    delimiter: 'word'
   });
 
   // Go through each element with the 'blast' class and assign
   // a random set of CSS to it
-  $('.blast').each(randomizeCharacter);
+  $('.blast').each(randomizeStyle);
 
 });
 
@@ -57,7 +62,10 @@ $(document).ready(function() {
 //
 // For each character targeted by Blast we just set its CSS to random
 // entries from our arrays...
-function randomizeCharacter () {
+function randomizeStyle () {
+  // Note that we can still use 'this' to refer to the current element
+  // targeted by .each() above, even though we've written a separate
+  // function to keep things tidy
   $(this).css({
     display: 'inline-block', // Needed for changing the transform
     fontFamily: getRandomElement(fonts),
@@ -66,6 +74,7 @@ function randomizeCharacter () {
     backgroundColor: getRandomElement(backgroundColors),
     border: getRandomElement(borders),
     marginRight: getRandomElement(marginRights),
+    padding: getRandomElement(paddings),
     transform: getRandomElement(transforms)
   })
 }
@@ -73,7 +82,17 @@ function randomizeCharacter () {
 // getRandomElement (array)
 //
 // Helper function get pull a random element from an array
+//
+// Note that this is an example of a function that
+//
+// - RECEIVES information (the array to get a random element from)
+// - RETURNS information (the element it chose)
+//
 function getRandomElement(array) {
-  var randomElement = array[Math.floor(Math.random() * array.length)]
+  // Choose a random index (box number) in the provided array
+  var randomIndex = Math.floor(Math.random() * array.length);
+  // Get the element at that index (box number)
+  var randomElement = array[randomIndex];
+  // Return it to whoever asked for it
   return randomElement;
 }
