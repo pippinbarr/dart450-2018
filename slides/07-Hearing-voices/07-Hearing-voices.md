@@ -16,7 +16,8 @@ class:middle
 - But fortunately, it's also true that _other people_ have often done part of what we need to do
 - And we can _reuse_ their labour to make faster progress on our own work
 - This tends to come in three flavours
-  - `View Source`
+
+  - "View Source"
   - Help sites
   - Libraries and Plugins
 
@@ -28,17 +29,19 @@ class:middle
 - This is a great trick for getting a sense of how particular effects are being achieved or at least what libraries and plugins are being used
 - But it's also very often incomprehensible, not commented, and sometimes obfuscated to prevent you from taking the work
 - A lot of the time it's even badly done!
-- __Verdict:__ It's well worth using view source to get a clue to how something is being done, but it's rarely going to help us in terms of actual code
+
+* __Verdict:__ It's well worth using view source to get a clue to how something is being done, but it's rarely going to help us in terms of actual code
 
 ---
 
 # Help sites, or "The Internet Is Here to Help"
 
-- Sites like stackexchange.com and stackoverflow.com are forums dedicated to people asking their hyper-specific programming question and having it answered by someone more experienced
+- Sites like [stackexchange.com](http://www.stackexchange.com) and [stackoverflow.com](http://stackoverflow.com) are forums dedicated to people asking their hyper-specific programming question and having it answered by someone more experienced
 - Because the internet is enormous, it's exceedingly common for someone to have _already asked your exact question_ and for that question to have _received an answer_
 - This is amazing because you often get an explanation as well as sample code for how to achieve something
 - But it's also true that sometimes the answers are arcane, way beyond what you understand, or poorly written in some way
-- __Verdict:__ If you _understand_ the answer, help sites are fantastic, but if you don't it can be a major risk to just try to cut and paste the code into your own work
+
+* __Verdict:__ If you _understand_ the answer, help sites are fantastic, but if you don't it can be risky to just try to cut and paste the code into your own work
 
 ---
 
@@ -48,7 +51,8 @@ class:middle
 - The great thing about libraries is that they are specifically _designed_ to be used by other people
 - Also great is that you can consider "designing backwards" from libraries by finding a library with an interesting effect and thinking about how you might use it
 - But like any programming, libraries can still be hard to understand, particularly if they're not well documented
-- __Verdict:__ Libraries are the pinnacle of code reuse and can give us programming superpowers even as beginner programmers
+
+* __Verdict:__ Libraries are the pinnacle of code reuse and can give us programming superpowers even as beginner programmers
 
 ---
 
@@ -56,13 +60,14 @@ class:middle
 
 - Good question.
 - The specifics vary, but there's a reasonably reliable process you can follow
+- We did something like this with blast.js a couple of weeks back, but let's go through it  in some more detail with a couple other libraries
 - Let's try it out...
 
 ---
 
 # 1. .hi[Find a library you want to use]
 
-- You might hear about a library from a friend, you might do a search on "cool javascript libraries", you might see one references in the `index.html` of a website you're viewing the source of, you might search for a specific thing you want to do like "text to speech javascript"
+- You might hear about a library from a friend, you might do a search on "cool javascript libraries", you might see one referenced in the `index.html` of a website you're viewing the source of, you might search for a specific thing you want to do like "text to speech javascript"
 - For our purposes we're going to imagine we want that last one, a text to speech library
 - We're going to use the first hit on Google, which is a library called [ResponsiveVoice](https://responsivevoice.org/)
 
@@ -82,7 +87,7 @@ https://responsivevoice.org
 # 3. .hi[Learn in general about the library]
 
 - We want to know what the library does, so we should read whatever description or example the homepage provides us with
-- In particular, at this point we should be making sure that it either does what we want, or at least that it sounds like fun to play around it
+- In particular, at this point we should be making sure that it either does what we want, or at least that it sounds like fun to play around with it
 - Examples are particularly helpful, of course, since you can actually get a sense of the thing working
 - In the case of ResponsiveVoice, there's both description and an example. Looks cool.
 
@@ -90,9 +95,9 @@ https://responsivevoice.org
 
 # 4. .hi[Find instructions for getting the library set up]
 
-- Almost any library will include instructions for getting it set up in your project
+- Any reasonable library will have instructions for setting it up
 - But of course we need to be prepared for things to be kind of obtuse sometimes
-- And we need to at least be able to understand the basic ideas involved, such as needing a `<script>` tag to include the library itself, and then also potentially needing some template code in your own script before using the library's functions
+- And we need to at least be able to understand the basic ideas involved, such as needing a `<script>` tag in our HTML to include the library itself, and then also potentially needing some setup code in our script before using the library's functions
 - ResponsiveVoice has some pretty straightforward 'get up and running' instructions on the front page... so...
 
 ---
@@ -112,7 +117,12 @@ https://responsivevoice.org
 
 - Some libraries give their most basic example using only HTML-oriented examples (like ResponsiveVoice)
 - It's worth making sure that you can get the simplest version of the library working using your own `script.js` file instead
-- In the case of ResponsiveVoice we can see there's a specific line of JavaScript embedded in the `<input>` of their example
+- In the case of ResponsiveVoice we can see there's a specific line of JavaScript embedded in the `<input>` of their example:
+
+```
+responsiveVoice.speak("Hello World");
+```
+
 - We can figure out that this is the line that makes the voice speak, right?
 - So let's put that into our `script.js` instead...
 
@@ -123,7 +133,7 @@ https://responsivevoice.org
 - Most libraries won't just have a basic setup example, they'll have extensive documentation that tells you _everything_ the library can do
 - Sometimes they will also have little examples of each kind of thing the library does
 - Be aware that the documentation is not always easy to understand
-- Note that the documentation is often called the libraries __API__ (Application Programming Interface)
+- Note that the documentation is often called the __API__ (Application Programming Interface)
 - Take it slow, ask for help
 - With ResponsiveVoice we have a relatively painless amount of documentation along with a bunch of examples, so let's try some out through cutting and pasting...
 

@@ -20,7 +20,11 @@ var abusePhrases = [
   "worth nothing",
   "a waste of time",
   "lame",
-  "disgusting"
+  "disgusting",
+  "grotesque",
+  "repellent",
+  "nothing",
+  "never going to amount to anything"
 ]
 
 // A variable to store the current thing the user
@@ -40,8 +44,8 @@ $(document).ready(function() {
     // specified with EVERYTHING it heard from that point on...
     var command = {
 
-      'I am *abusePhrase': said,
-      'I\'m *abusePhrase': said
+      "I am *abusePhrase": handleUserSpeech,
+      "I'm *abusePhrase": handleUserSpeech
 
     };
 
@@ -54,7 +58,7 @@ $(document).ready(function() {
     annyang.start();
 
     // Choose a phrase for the user to say first
-    currentPhrase = getNewPhrase();
+    setNewPhrase();
 
     // Display the phrase on the page
     $('#command').text('Say, "I am ' + currentPhrase + '."');
@@ -63,24 +67,24 @@ $(document).ready(function() {
 });
 
 
-// said (phrase)
+// handleUserSpeech(phrase)
 //
 // Called by annyang when it hears a sentence of the form
 // "I am X". phrase will contain the X part.
 // Checks whether the user said what they were told to say
 // and reacts accordingly.
-function said(phrase) {
+function handleUserSpeech(phrase) {
 
   // We check whether the user said what they were told to say
   // by comparing what annyang heard (phrase) with the
   // currentPhrase variable
-  if (phrase == currentPhrase) {
+  if (phrase === currentPhrase) {
     // If they said the right thing, we emphasise it...
     $('#command').text("That's right. You are " + phrase + ".");
     // Get a new thing for them to say
-    currentPhrase = getNewPhrase();
+    setNewPhrase();
     // And tell them to say it
-    $('#command').append("<p>Now say \"I am " + currentPhrase + "\".");
+    $('#command').append(" Now say \"I am " + currentPhrase + "\".");
   }
   else {
     // If they said the wrong thing, correct them and demand
@@ -93,7 +97,7 @@ function said(phrase) {
 // getNewPhrase()
 //
 // Returns a random phrase from the abusePhrases array
-function getNewPhrase() {
+function setNewPhrase() {
   // Select a random index into the abusePhrases array
   // This little formula of taking the floor of a random
   // number between 0 and 1 times the length of an array
@@ -101,6 +105,6 @@ function getNewPhrase() {
   var phraseIndex = Math.floor(Math.random() * abusePhrases.length);
   // Get the phrase at that index
   var newPhrase = abusePhrases[phraseIndex];
-  // Return it
-  return newPhrase;
+  // Set the current phrase
+  currentPhrase = newPhrase;
 }

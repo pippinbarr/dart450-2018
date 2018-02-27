@@ -23,7 +23,7 @@ $(document).ready(function() {
       // In annyang's commands writing a colon immediately
       // followed by a variable name means it will call
       // the function specified with that word in an argument
-      ':word': said
+      ':word': userSaidAWord
 
     };
 
@@ -39,34 +39,37 @@ $(document).ready(function() {
 });
 
 
-// said (word)
+// userSaidAWord (word)
 //
 // Called when annyang detects the user said a word. The argument
 // will contain the word annyang heard.
-function said(word) {
+function userSaidAWord(word) {
   // First make sure the "game" isn't already over
   if (gameOver) {
+    // If we're in here, the game is over and we shouldn't
+    // react to the player saying things anymore
     return;
   }
 
   // Check if they said the correct answer to our devious riddle...
-  if (word == 'something') {
+  if (word === 'something') {
     // If they said 'something', they got it right, make the
     // page green.
     $('body').css({
-      'background-color': 'green'
+      backgroundColor: 'green'
     });
   }
   else {
     // If they didn't say 'something', they got it wrong, make
     // the page red
     $('body').css({
-      'background-color': 'red'
+      backgroundColor: 'red'
     })
   }
 
   // For good measure, add what they said to the page
-  $('#command').text('"' + word + '."');
+  $('#message').text('"' + word + '."');
 
+  // The game is over now, so remember that
   gameOver = true;
 }

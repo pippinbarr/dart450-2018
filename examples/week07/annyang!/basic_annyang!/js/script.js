@@ -8,6 +8,8 @@ Using Annyang to manipulate some HTML and CSS
 
 $(document).ready(function() {
 
+  addSquare();
+
   // As per the sample code, the first thing suggested is that you
   // check if "annyang" exists before you start trying to use it.
   // This is a good thing to do and will gracefully avoid an error
@@ -23,8 +25,12 @@ $(document).ready(function() {
       'red': makeDivsRed,
       // If annyang hears "green" it will call makeDivsGreen()
       'green': makeDivsGreen,
-      // If annyang hears "more" it will call addDiv()
-      'more': addDiv
+      // If annyang hears "left" it will call moveDivsLeft()
+      'left': moveDivsLeft,
+      // If annyang hears "right" it will call moveDivsRight()
+      'right': moveDivsRight,
+      // If annyang hears "more" it will call addSquare()
+      'more': addSquare
     };
 
     // Now we've defined the commands we give them to annyang
@@ -44,11 +50,33 @@ $(document).ready(function() {
 
 });
 
+// addSquare
+//
+// Called on command 'add square', appends a new square to the page
+// in a random location
+function addSquare () {
+  // Create the square
+  $square = $('<div class="square"></div>');
+
+  // Choose a random location
+  var x = Math.random() * $(window).width();
+  var y = Math.random() * $(window).height();
+
+  // Set the square's location
+  $square.css({
+    top: y + 'px',
+    left: x + 'px'
+  })
+
+  // Add it to the page
+  $('body').append($square);
+}
+
+
 // makeDivsRed
 //
 // Called on command 'red', just sets the CSS appropriately.
 function makeDivsRed () {
-  console.log("red");
   $('.square').css({
     'background-color': 'red'
   })
@@ -63,10 +91,21 @@ function makeDivsGreen () {
   })
 }
 
-// makeDivsRed
+// moveDivsLeft
 //
-// Called on command 'add', just appends a new div to the page.
-function addDiv () {
-  var newDiv = $('<div class="square"></div>');
-  $('body').append(newDiv);
+// Called on 'move left', animates all .square elements to the left
+function moveDivsLeft() {
+  console.log("Left");
+  $('.square').animate({
+    left: '-=100px'
+  },500);
+}
+
+// moveDivsLeft
+//
+// Called on 'move right', animates all .square elements to the right
+function moveDivsRight() {
+  $('.square').animate({
+    left: '+=100px'
+  },500);
 }
