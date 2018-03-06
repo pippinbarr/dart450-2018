@@ -1,0 +1,24 @@
+/*
+
+Eliza
+Pippin Barr
+
+*/
+
+#eliza {
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+
+#input {
+  font-family: serif;
+  font-size: 2em;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 2em;
+  word-wrap: break-word;
+}
+
+#submit {
+  font-size: 2em;
+}

@@ -1,0 +1,17 @@
+/*
+
+It's Oh So Quiet
+Pippin Barr
+
+*/
+
+body {
+  margin: 10%;
+}
+
+#quiet {
+  font-family: sans-serif;
+  font-size: 10em;
+  font-weight: bold;
+  opacity: 1;
+}

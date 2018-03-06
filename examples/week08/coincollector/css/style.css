@@ -1,0 +1,27 @@
+/*
+
+Coin Collector
+Pippin Barr
+
+*/
+
+/* Make a div look like a coin */
+.coin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255,255,0);
+  border: 3px solid rgb(220,220,0);
+  border-radius: 50%;
+  color: rgb(150,150,0);
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+#score {
+  font-size: 100em;
+}
