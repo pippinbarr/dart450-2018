@@ -1,0 +1,27 @@
+/*
+
+Magnetic Poetry
+Pippin Barr
+
+Simple styling to make the words look like those
+fridge magnet poetry things. (e.g. a border), and
+to change the cursor.
+
+*/
+
+body {
+  user-select: none;
+}
+
+.word {
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  border-left: 1px solid;
+  border-top: 1px solid;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+  padding: 4px;
+  background-color: white;
+}

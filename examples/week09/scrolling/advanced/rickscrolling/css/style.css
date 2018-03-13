@@ -1,0 +1,59 @@
+/*****************
+
+RickScrolling
+Pippin Barr
+
+Mostly we have some setup for Tubular to work (the wrapper) and some
+basic styling of the lyrics texts, including an animation for while
+they are spoken.
+
+******************/
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper {
+	margin: 0 auto;
+}
+
+#content {
+	font-family: sans-serif;
+	font-size: 3em;
+	font-weight: bolder;
+	text-align: center;
+	color: rgb(0,0,0);
+}
+
+#top-padding {
+	padding-top: 70%;
+}
+
+.lyric {
+	padding-bottom: 200px;
+}
+
+/*
+Flasher animation.
+
+Sets the 'color' of the element to a sequence of nice
+bright colours while fading them in and out with 'opacity' for a flickering
+effect. Uses the 'infinite' property to keep it going.
+*/
+
+.flasher {
+	animation: flasher 0.5s linear infinite;
+}
+
+@keyframes flasher {
+	10% { opacity: 0.0; color: rgb(255,0,0)}
+	20% { opacity: 1.0; color: rgb(0,255,0)}
+	30% { opacity: 0.0; color: rgb(0,0,255)}
+	40% { opacity: 1.0; color: rgb(255,0,255)}
+	50% { opacity: 0.0; color: rgb(0,255,255)}
+	60% { opacity: 1.0; color: rgb(255,255,0)}
+	70% { opacity: 0.0; color: rgb(0,127,255)}
+	80% { opacity: 1.0; color: rgb(255,127,255)}
+	90% { opacity: 0.0; color: rgb(255,0,127)}
+}

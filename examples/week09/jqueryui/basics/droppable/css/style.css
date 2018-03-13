@@ -1,0 +1,32 @@
+/*
+
+DART 450, Winter 2018
+Droppable
+Pippin Barr
+
+Basic example of jQuery UI's droppable function
+
+*/
+
+body {
+
+}
+
+#dragme {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+#dragmetoo {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+
+#droponme {
+  width: 200px;
+  height: 200px;
+  border: 5px dashed black;
+  margin: 0 auto;
+}

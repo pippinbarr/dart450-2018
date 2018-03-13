@@ -1,0 +1,138 @@
+<!-- ************************************************************************
+
+RickScrolling
+Pippin Barr
+
+This is a webpage using Tubular (a jQuery plugin for making a fullscreen
+YouTube video the background of a page), ScrollMagic (a jQuery plugin for
+triggering code when specific page elements are scrolled to/past) and browser
+speech synthesis to create a kind of scrolling-powered robot karaoke for
+Rick Astley's "Never Gonna Give You Up".
+
+Basically, this kind of thing is the reason the internet exists.
+
+************************************************************************ -->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Come on now, that it a truly great page title. -->
+  <title>Rickscrolling</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+  <!-- Tubular -->
+  <script src="js/jquery.tubular.1.0.js"></script>
+
+  <!-- Responsive Voice -->
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+  <!-- ScrollMagic -->
+  <script src="js/ScrollMagic.min.js"></script>
+  <script src="js/plugins/debug.addIndicators.min.js"></script>
+
+  <!-- Our script -->
+  <script src="js/script.js"></script>
+
+
+</head>
+
+<!-- The HTML of the page is eerily simple!
+It's just the lyrics in a series of DIVs! -->
+
+<body>
+
+  <div id="wrapper">
+
+    <!-- Note the use of the tubular-volume-down class here.
+    We're doing that so you can click the screen to reduce the YouTube video's
+    volume without having a visible interface element. It's clumsy and only
+    for demonstration purposes here. -->
+    <div id="content" class='tubular-volume-down'>
+
+      <!-- Some padding to move the first lyric off the screen -->
+      <div id="top-padding"></div>
+
+      <!-- And then it's just the lyrics. Thanks to the jQuery above, any element
+      (like this DIVs) that has the 'lyric' class attached will be spoken when
+      it comes onto the screen. As well as flashing and fading out behaviours. -->
+      <div class="lyric">Ooooooooooooooh.</div>
+      <div class="lyric">We're no strangers to love</div>
+      <div class="lyric">You know the rules and so do I</div>
+      <div class="lyric">A full commitment's what I'm thinking of</div>
+      <div class="lyric">You wouldn't get this from any other guy</div>
+      <div class="lyric">I just wanna tell you how I'm feeling</div>
+      <div class="lyric">Gotta make you understand</div>
+      <div class="lyric">Never gonna give you up</div>
+      <div class="lyric">Never gonna let you down</div>
+      <div class="lyric">Never gonna run around and desert you</div>
+      <div class="lyric">Never gonna make you cry</div>
+      <div class="lyric">Never gonna say goodbye</div>
+      <div class="lyric">Never gonna tell a lie and hurt you</div>
+      <div class="lyric">We've known each other for so long</div>
+      <div class="lyric">Your heart's been aching, but</div>
+      <div class="lyric">You're too shy to say it</div>
+      <div class="lyric">Inside, we both know what's been going on</div>
+      <div class="lyric">We know the game and we're gonna play it</div>
+      <div class="lyric">And if you ask me how I'm feeling</div>
+      <div class="lyric">Don't tell me you're too blind to see</div>
+      <div class="lyric">Never gonna give you up</div>
+      <div class="lyric">Never gonna let you down</div>
+      <div class="lyric">Never gonna run around and desert you</div>
+      <div class="lyric">Never gonna make you cry</div>
+      <div class="lyric">Never gonna say goodbye</div>
+      <div class="lyric">Never gonna tell a lie and hurt you</div>
+      <div class="lyric">Never gonna give you up</div>
+      <div class="lyric">Never gonna let you down</div>
+      <div class="lyric">Never gonna run around and desert you</div>
+      <div class="lyric">Never gonna make you cry</div>
+      <div class="lyric">Never gonna say goodbye</div>
+      <div class="lyric">Never gonna tell a lie and hurt you</div>
+      <div class="lyric">(Ooh, give you up)</div>
+      <div class="lyric">(Ooh, give you up)</div>
+      <div class="lyric">Never gonna give, never gonna give</div>
+      <div class="lyric">(Give you up)</div>
+      <div class="lyric">Never gonna give, never gonna give</div>
+      <div class="lyric">(Give you up)</div>
+      <div class="lyric">We've known each other for so long</div>
+      <div class="lyric">Your heart's been aching, but</div>
+      <div class="lyric">You're too shy to say it</div>
+      <div class="lyric">Inside, we both know what's been going on</div>
+      <div class="lyric">We know the game and we're gonna play it</div>
+      <div class="lyric">I just wanna tell you how I'm feeling</div>
+      <div class="lyric">Gotta make you understand</div>
+      <div class="lyric">Never gonna give you up</div>
+      <div class="lyric">Never gonna let you down</div>
+      <div class="lyric">Never gonna run around and desert you</div>
+      <div class="lyric">Never gonna make you cry</div>
+      <div class="lyric">Never gonna say goodbye</div>
+      <div class="lyric">Never gonna tell a lie and hurt you</div>
+      <div class="lyric">Never gonna give you up</div>
+      <div class="lyric">Never gonna let you down</div>
+      <div class="lyric">Never gonna run around and desert you</div>
+      <div class="lyric">Never gonna make you cry</div>
+      <div class="lyric">Never gonna say goodbye</div>
+      <div class="lyric">Never gonna tell a lie and hurt you</div>
+      <div class="lyric">Never gonna give you up</div>
+      <div class="lyric">Never gonna let you down</div>
+      <div class="lyric">Never gonna run around and desert you</div>
+      <div class="lyric">Never gonna make you cry</div>
+      <div class="lyric">Never gonna say goodbye</div>
+      <div class="lyric">Never gonna tell a lie and hurt you</div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

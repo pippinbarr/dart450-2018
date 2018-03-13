@@ -1,0 +1,22 @@
+/*
+
+DART 450, Winter 2018
+Title of project
+Author
+
+Some description of the CSS styling
+
+*/
+
+body {
+  height: 10000px;
+}
+
+div {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 800px;
+  left: 100px;
+  background-color: green;
+}

@@ -1,0 +1,26 @@
+/*
+
+DIY Website
+Pippin Barr
+
+Basic CSS to make this thing look like a webpage
+
+*/
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+  background-image:
+  -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #777), color-stop(.25, transparent)),
+  -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #777), color-stop(.25, transparent)),
+  -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #777)),
+  -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #777));
+  -webkit-background-size:2px 3px; /* override value for shitty webkit */
+  background-position:0 0, 50px 0, 50px -50px, 0px 50px;
+}
