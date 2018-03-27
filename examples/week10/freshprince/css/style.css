@@ -1,0 +1,24 @@
+/*
+
+Fresh Prince
+Pippin Barr
+
+Basic styling of our page.
+
+*/
+
+body {
+  font-family: sans-serif;
+  margin: 4em;
+}
+
+#lyrics {
+  display: none;
+  font-size: 1.4em;
+}
+
+#fail {
+  display: none;
+  font-size: 5em;
+  font-weight: bold;
+}

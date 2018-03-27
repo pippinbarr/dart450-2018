@@ -1,0 +1,20 @@
+/*
+
+News
+Pippin Barr
+
+Some basic styling for classiness.
+
+*/
+
+body {
+  font-family: sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  margin: 4em;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: black;
+}

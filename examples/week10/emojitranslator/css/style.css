@@ -1,0 +1,16 @@
+/*
+
+Emoji Translator
+Pippin Barr
+
+*/
+
+#translation {
+  margin-top: 20px;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+}
+
+img {
+  max-height: 20px;
+}
